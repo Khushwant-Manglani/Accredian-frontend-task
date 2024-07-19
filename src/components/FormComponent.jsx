@@ -71,7 +71,7 @@ const FormComponent = ({ displayPopup, closePopup, formStyles }) => {
 
   return (
     <div
-      className={`absolute z-10 w-full max-w-lg h-[500px] mx-auto bg-white p-8 rounded-lg mt-[100px] drop-shadow-sm border ${
+      className={`absolute z-10 w-full max-w-lg h-[550px] mx-auto bg-white p-8 rounded-lg mt-[100px] drop-shadow-sm border ${
         displayPopup ? "block" : "hidden"
       }`}
       style={formStyles}
@@ -98,7 +98,7 @@ const FormComponent = ({ displayPopup, closePopup, formStyles }) => {
               onChange={handleChange}
             />
             {errors.name && (
-              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              <span className="text-red-500 text-s mt-1">{errors.name}</span>
             )}
           </div>
           <div className="relative mt-4">
@@ -112,7 +112,7 @@ const FormComponent = ({ displayPopup, closePopup, formStyles }) => {
               onChange={handleChange}
             />
             {errors.email && (
-              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+              <span className="text-red-500 text-s mt-1">{errors.email}</span>
             )}
           </div>
           <div className="relative mt-4">
@@ -126,7 +126,9 @@ const FormComponent = ({ displayPopup, closePopup, formStyles }) => {
               onChange={handleChange}
             />
             {errors.referralCode && (
-              <p className="text-red-500 text-xs mt-1">{errors.referralCode}</p>
+              <span className="text-red-500 text-s mt-1">
+                {errors.referralCode}
+              </span>
             )}
           </div>
           <div className="relative mt-4">
@@ -140,7 +142,7 @@ const FormComponent = ({ displayPopup, closePopup, formStyles }) => {
               onChange={handleChange}
             />
             {errors.message && (
-              <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+              <span className="text-red-500 mt-1">{errors.message}</span>
             )}
           </div>
         </div>

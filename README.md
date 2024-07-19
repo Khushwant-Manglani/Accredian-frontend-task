@@ -28,8 +28,8 @@ This project involves creating a captivating and responsive user interface for a
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/refer-earn-frontend.git
-   cd refer-earn-frontend
+   git clone https://github.com/Khushwant-Manglani/Accredian-frontend-task.git
+   cd Accredian-frontend-task
    ```
 
 2. **Install dependencies:**
@@ -41,10 +41,10 @@ This project involves creating a captivating and responsive user interface for a
 3. **Start the development server:**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
-   The development server will start and you can view the landing page at `http://localhost:3000`.
+   The development server will start and you can view the landing page at `http://localhost:5173`.
 
 ## Usage
 
@@ -58,14 +58,6 @@ This project involves creating a captivating and responsive user interface for a
 - **Responsiveness**: Ensure the design is responsive and works well on various screen sizes.
 - **User Experience**: Design for a seamless user experience with clear navigation and feedback.
 
-## Contributing
-
-Feel free to submit issues and pull requests. Contributions are welcome!
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Replace `https://github.com/yourusername/refer-earn-frontend.git` with the actual URL of your GitHub repository. This README provides a comprehensive overview and instructions for setting up and using the frontend application.
+This project is licensed under the MIT License.

@@ -1,6 +1,15 @@
 import PropTypes from "prop-types";
+import FormComponent from "./FormComponent";
+import { useState } from "react";
+
+const formStyles = {
+  marginLeft: "370px",
+  marginTop: "240px",
+};
 
 const FrameComponent = ({ className = "" }) => {
+  const [displayPopup, setDisplayPopup] = useState(false);
+
   return (
     <section
       className={`w-[1906px] flex flex-row items-start justify-center pt-0 px-5 pb-[177px] box-border max-w-full text-center text-8xl-7 text-homeaccrediancom-mirage font-homeaccrediancom-roboto-bold-17 mq900:pb-[75px] mq900:box-border mq1300:pb-[115px] mq1300:box-border ${className}`}
@@ -383,9 +392,17 @@ const FrameComponent = ({ className = "" }) => {
               </div>
             </div>
           </div>
+          <FormComponent
+            displayPopup={displayPopup}
+            closePopup={() => setDisplayPopup((prevState) => !prevState)}
+            formStyles={formStyles}
+          />
         </div>
         <div className="w-[1218px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
-          <button className="cursor-pointer [border:none] py-5 pr-[68px] pl-[69px] bg-homeaccrediancom-royal-blue w-[236px] rounded-lg flex flex-row items-start justify-start box-border whitespace-nowrap hover:bg-dodgerblue-100">
+          <button
+            className="cursor-pointer [border:none] py-5 pr-[68px] pl-[69px] bg-homeaccrediancom-royal-blue w-[236px] rounded-lg flex flex-row items-start justify-start box-border whitespace-nowrap hover:bg-dodgerblue-100"
+            onClick={() => setDisplayPopup((prevState) => !prevState)}
+          >
             <div className="flex-1 relative text-xl leading-[24px] font-source-sans-pro text-homeaccrediancom-nero text-center">
               Refer Now
             </div>

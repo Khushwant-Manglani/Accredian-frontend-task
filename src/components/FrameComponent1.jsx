@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
+import FormComponent from "./FormComponent";
 
 const FrameComponent1 = ({ className = "" }) => {
+  const [displayPopup, setDisplayPopup] = useState(false);
+
   return (
     <section
       className={`self-stretch flex flex-col items-center justify-start pt-[25px] pb-[63px] pr-5 pl-[25px] box-border relative gap-[78px] min-h-[876px] max-w-full text-center text-8xl-7 text-homeaccrediancom-mirage font-homeaccrediancom-roboto-bold-17 mq900:gap-[39px] mq900:pt-5 mq900:pb-[41px] mq900:box-border mq450:gap-[19px] mq450:pb-[27px] mq450:box-border ${className}`}
@@ -54,12 +58,20 @@ const FrameComponent1 = ({ className = "" }) => {
         </div>
       </div>
       <div className="w-[1387px] flex flex-row items-start justify-center py-0 pr-[25px] pl-5 box-border max-w-full">
-        <button className="cursor-pointer [border:none] py-5 px-[72px] bg-homeaccrediancom-royal-blue w-[236px] rounded-lg flex flex-row items-start justify-start box-border whitespace-nowrap z-[1] hover:bg-dodgerblue-100">
+        <button
+          className="cursor-pointer [border:none] py-5 px-[72px] bg-homeaccrediancom-royal-blue w-[236px] rounded-lg flex flex-row items-start justify-start box-border whitespace-nowrap z-[1] hover:bg-dodgerblue-100"
+          onClick={() => setDisplayPopup((prevState) => !prevState)}
+        >
           <div className="flex-1 relative text-xl leading-[24px] font-source-sans-pro text-homeaccrediancom-nero text-center inline-block min-w-[92px]">
             Refer Now
           </div>
         </button>
       </div>
+
+      <FormComponent
+        displayPopup={displayPopup}
+        closePopup={() => setDisplayPopup((prevState) => !prevState)}
+      />
     </section>
   );
 };

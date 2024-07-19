@@ -1,7 +1,15 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
+import FormComponent from "./FormComponent";
+
+const formStyles = {
+  marginLeft: "410px",
+  marginTop: "170px",
+};
 
 const FrameComponent2 = ({ className = "" }) => {
+  const [displayPopup, setDisplayPopup] = useState(false);
+
   const onBenefitsTextClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='rectangle']");
     if (anchor) {
@@ -89,7 +97,10 @@ const FrameComponent2 = ({ className = "" }) => {
                   </div>
                 </div>
                 <div className="w-[282px] flex flex-row items-start justify-start py-0 px-[45px] box-border mq450:pl-5 mq450:pr-5 mq450:box-border">
-                  <button className="cursor-pointer [border:none] py-[15px] px-[52px] bg-homeaccrediancom-royal-blue flex-1 rounded-lg flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-dodgerblue-100">
+                  <button
+                    className="cursor-pointer [border:none] py-[15px] px-[52px] bg-homeaccrediancom-royal-blue flex-1 rounded-lg flex flex-row items-start justify-start whitespace-nowrap z-[1] hover:bg-dodgerblue-100"
+                    onClick={() => setDisplayPopup((prevState) => !prevState)}
+                  >
                     <div className="flex-1 relative text-xl leading-[24px] font-source-sans-pro text-homeaccrediancom-nero text-center inline-block min-w-[88px]">
                       Refer Now
                     </div>
@@ -134,6 +145,11 @@ const FrameComponent2 = ({ className = "" }) => {
             />
           </div>
         </div>
+        <FormComponent
+          displayPopup={displayPopup}
+          closePopup={() => setDisplayPopup((prevState) => !prevState)}
+          formStyles={formStyles}
+        />
       </div>
     </section>
   );

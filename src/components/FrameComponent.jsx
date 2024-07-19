@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const formStyles = {
   marginLeft: "370px",
-  marginTop: "240px",
+  marginTop: "200px",
 };
 
 const FrameComponent = ({ className = "" }) => {

@@ -2,6 +2,10 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import FormComponent from "./FormComponent";
 
+const formStyles = {
+  marginTop: "70px",
+};
+
 const FrameComponent1 = ({ className = "" }) => {
   const [displayPopup, setDisplayPopup] = useState(false);
 
@@ -71,6 +75,7 @@ const FrameComponent1 = ({ className = "" }) => {
       <FormComponent
         displayPopup={displayPopup}
         closePopup={() => setDisplayPopup((prevState) => !prevState)}
+        formStyles={formStyles}
       />
     </section>
   );
